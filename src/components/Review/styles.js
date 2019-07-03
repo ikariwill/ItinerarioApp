@@ -14,27 +14,11 @@ export const Name = styled.Text`
   text-transform: uppercase;
 `;
 
-export const Street = styled.Text`
+export const Comment = styled.Text`
   font-size: 17px;
   color: #666;
   margin-top: 5px;
   line-height: 20px;
-`;
-
-export const State = styled.Text`
-  font-size: 19px;
-  color: #666;
-  margin-top: 5px;
-  line-height: 20px;
-`;
-
-export const Phone = styled.Text`
-  margin-right: 6px;
-`;
-
-export const Author = styled.Text`
-  margin-top: 15px;
-  margin-right: 6px;
 `;
 
 export const Stars = styled.Text`

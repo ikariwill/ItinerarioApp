@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 import api from '~/services/api';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import Location from '~/components/Location';
+import LocationComponent from '~/components/Location';
 
 import {
   Container, Title, Form, Input, Submit, List,
 } from './styles';
 
-export default function Main() {
+export default function Main({ navigation }) {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
@@ -22,21 +22,29 @@ export default function Main() {
     loadLocations();
   }, []);
 
+  const handleNavigate = (location) => {
+    navigation.navigate('Location', { location });
+  };
+
   return (
     <Container>
       <Title>Itinerário Cotia</Title>
-      <Form>
+      {/* <Form>
         <Input autoCapitalize="none" autoCorrect={false} placeholder="Encontre um local" />
-        <Submit onPress={() => {}}>
+        <Submit onPress={() => handleNavigate(locations)}>
           <Icon name="search" size={26} color="#FFF" />
         </Submit>
-      </Form>
+      </Form> */}
       <List
         keyboardShouldPersistTaps="handled"
         data={locations}
         keyExtractor={item => String(item._id)}
-        renderItem={({ item }) => <Location data={item} />}
+        renderItem={({ item }) => <LocationComponent navigation={navigation} data={item} />}
       />
     </Container>
   );
 }
+
+Main.navigationOptions = {
+  header: null,
+};

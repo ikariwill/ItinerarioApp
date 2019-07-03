@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="217" height="41" viewBox="0 0 217 41">
-  <g id="Group_30" data-name="Group 30" transform="translate(-80 -12)">
-    <text id="Itinerário_Cotia" data-name="Itinerário Cotia" transform="translate(210 43)" fill="#af81ff" font-size="26" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-86.404" y="0">Itinerário Cotia</tspan></text>
-    <g id="placeholder_1_" data-name="placeholder (1)" transform="translate(80 12)">
-      <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="20.5" cy="5.655" rx="20.5" ry="5.655" transform="translate(0 29.69)" fill="#282727"/>
-      <path id="Path_1" data-name="Path 1" d="M32.581,3.764h0a12.85,12.85,0,0,0-18.171,0h0C9.888,8.285,9.38,16.8,13.216,21.914L23.5,36.759,33.774,21.914C37.611,16.8,37.1,8.285,32.581,3.764Zm-8.961,13.2a4.241,4.241,0,1,1,4.241-4.241A4.241,4.241,0,0,1,23.621,16.966Z" transform="translate(-3.121 0)" fill="#af81ff"/>
-    </g>
-  </g>
-</svg>
