@@ -1,13 +1,23 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
 export const Container = styled.View`
-  padding: 20px;
+  padding: 0;
   border-radius: 4px;
   margin-bottom: 15px;
   background: #fff;
 `;
 
+export const Image = styled.Image`
+  width: 100%;
+  max-height: 160px;
+  border-radius: 4px;
+  width: 100%;
+  height: 170px;
+`;
+
 export const Name = styled.Text`
+  padding-left: 15px;
+  padding-top: 5px;
   font-size: 18px;
   font-weight: bold;
   color: #6bd4c1;
@@ -15,6 +25,7 @@ export const Name = styled.Text`
 `;
 
 export const Street = styled.Text`
+  padding-left: 15px;
   font-size: 17px;
   color: #666;
   margin-top: 5px;
@@ -22,24 +33,21 @@ export const Street = styled.Text`
 `;
 
 export const State = styled.Text`
+  padding-left: 15px;
   font-size: 19px;
   color: #666;
   margin-top: 5px;
   line-height: 20px;
 `;
 
-export const Phone = styled.Text`
-  margin-right: 6px;
-`;
-
-export const Author = styled.Text`
-  margin-top: 15px;
-  margin-right: 6px;
-`;
-
-export const Stars = styled.Text`
-  flex: 1;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+export const Site = styled.Text`
+  margin-left: 15px;
+  font-size: 14px;
+  color: #fff;
+  margin-top: 5px;
+  line-height: 20px;
+  padding: 5px 10px;
+  background: #13a78b;
+  border-radius: 4px;
+  align-self: flex-start;
 `;

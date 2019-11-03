@@ -7,6 +7,14 @@ export const Container = styled.View`
   background: #fff;
 `;
 
+export const Avatar = styled.Image`
+  margin-right: 20px;
+  width: 44px;
+  height: 44px;
+  background: black;
+  border-radius: 22px;
+`;
+
 export const Name = styled.Text`
   font-size: 18px;
   font-weight: bold;

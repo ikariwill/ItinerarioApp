@@ -1,16 +1,16 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
+import React from "react";
 
-import {
-  Container, Name, Comment, Stars,
-} from './styles';
+import { Container, Name, Comment, Stars, Avatar } from "./styles";
 
-const ReviewCompoennt = ({ data }) => (
+const ReviewComponent = ({ data }) => (
   <Container>
+    <Avatar />
     <Name>{data.author.name}</Name>
     <Comment>{data.comment}</Comment>
-    <Stars>{data.stars} estrelas</Stars>
+    <Stars>
+      {data.stars} {data.stars > 1 ? "estrelas" : "estrela"}
+    </Stars>
   </Container>
 );
 
-export default ReviewCompoennt;
+export default ReviewComponent;

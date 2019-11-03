@@ -1,23 +1,18 @@
-import styled from 'styled-components/native';
-import LinearGradient from 'react-native-linear-gradient';
-import { getStatusBarHeight } from 'react-native-status-bar-height';
+import styled from "styled-components/native";
+import { getStatusBarHeight } from "react-native-status-bar-height";
 
-export const Container = styled(LinearGradient).attrs({
-  colors: ['#3D3D3D', '#3D3D3D'],
-  start: { x: 0, y: 0 },
-  end: { x: 1, y: 1 },
-})`
+export const Container = styled.View`
   flex: 1;
+  background: #6bd4c1;
   padding-top: ${20 + getStatusBarHeight(true)}px;
 `;
 
-export const Title = styled.Text`
-  font-size: 32px;
-  color: #fff;
-  font-weight: bold;
+export const Logo = styled.Image`
   z-index: 2;
-  padding: 20px 20px;
+  margin: 20px 20px;
   align-self: center;
+  min-width: 211px;
+  min-height: 38px;
 `;
 
 export const Form = styled.View`
@@ -27,7 +22,7 @@ export const Form = styled.View`
 `;
 
 export const Input = styled.TextInput.attrs({
-  placeholderTextColor: '#999',
+  placeholderTextColor: "#999"
 })`
   flex: 1;
   padding: 12px 15px;
@@ -38,7 +33,7 @@ export const Input = styled.TextInput.attrs({
 `;
 
 export const Submit = styled.TouchableOpacity`
-  background: #6bd4c1;
+  background: #fff;
   margin-left: 10px;
   justify-content: center;
   border-radius: 4px;
@@ -47,7 +42,7 @@ export const Submit = styled.TouchableOpacity`
 
 export const List = styled.FlatList.attrs({
   contentContainerStyle: { paddingHorizontal: 20 },
-  showsVerticaScrollIndicator: false,
+  showsVerticaScrollIndicator: false
 })`
   margin-top: 20px;
 `;
