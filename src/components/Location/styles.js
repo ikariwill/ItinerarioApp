@@ -78,6 +78,7 @@ export const Dislikes = styled.TouchableOpacity`
 `;
 
 export const Site = styled.Text`
+  margin-bottom: 10px;
   margin-left: 15px;
   font-size: 14px;
   color: #fff;
