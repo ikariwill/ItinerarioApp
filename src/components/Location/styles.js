@@ -4,7 +4,7 @@ export const Container = styled.View`
   padding: 0;
   border-radius: 4px;
   margin-bottom: 15px;
-  background: #fff;
+  background: #343434;
 `;
 
 export const Image = styled.Image`
@@ -27,7 +27,7 @@ export const Name = styled.Text`
 export const Street = styled.Text`
   padding-left: 15px;
   font-size: 17px;
-  color: #666;
+  color: #fff;
   margin-top: 5px;
   line-height: 20px;
 `;
@@ -35,9 +35,46 @@ export const Street = styled.Text`
 export const State = styled.Text`
   padding-left: 15px;
   font-size: 19px;
-  color: #666;
+  color: #fff;
   margin-top: 5px;
   line-height: 20px;
+`;
+
+export const ReviewContainer = styled.View`
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px 0px;
+  background: #343434;
+`;
+
+export const LikesCount = styled.Text`
+  font-size: 16px;
+  margin-right: 10px;
+  color: #fff;
+`;
+
+export const DislikesCount = styled.Text`
+  font-size: 16px;
+  margin-right: 10px;
+  color: #fff;
+`;
+
+export const Likes = styled.TouchableOpacity`
+  flex-direction: row;
+  margin-left: 15px;
+  padding: 5px 10px;
+  background: #6bd4c1;
+  border-radius: 4px;
+  margin-top: 5px;
+`;
+
+export const Dislikes = styled.TouchableOpacity`
+  flex-direction: row;
+  margin-left: 15px;
+  padding: 5px 10px;
+  background: #ff4565;
+  border-radius: 4px;
+  margin-top: 5px;
 `;
 
 export const Site = styled.Text`

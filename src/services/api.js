@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'http://192.168.15.14:3000',
+  baseURL: "https://itinerario-cotia.herokuapp.com"
 });
 
 export default api;

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Icon from "react-native-vector-icons/MaterialIcons";
+
+import Icon from "@expo/vector-icons/MaterialIcons";
+
 import api from "../../services/api";
 
 import LocationComponent from "../../components/Location";
@@ -23,8 +25,6 @@ export default function Main({ navigation }) {
   }, []);
 
   function handleSearch() {
-    setPreviousLocations(locations);
-
     const searchedLocations = locations.filter(
       location => location.nome.toLowerCase().indexOf(search.toLowerCase()) > -1
     );
