@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { AsyncStorage } from "react-native";
+
 import * as WebBrowser from "expo-web-browser";
 
 import api from "../../services/api";
@@ -19,7 +21,15 @@ import {
   Site
 } from "./styles";
 
-function LocationComponent({ data, navigation }) {
+export default function LocationComponent({ data, navigation }) {
+  const [likes, setLikes] = useState(0);
+  const [dislikes, setDislikes] = useState(0);
+
+  useEffect(() => {
+    setLikes(data.likes.length);
+    setDislikes(data.dislikes.length);
+  }, []);
+
   async function openInAppBrowser(url) {
     await WebBrowser.openBrowserAsync(url, {
       toolbarColor: "#343434",
@@ -30,27 +40,43 @@ function LocationComponent({ data, navigation }) {
   }
 
   async function handleLike(id) {
-    await api.post(
+    const userLogged = await AsyncStorage.getItem("user");
+
+    const response = await api.post(
       `/locations/${id}/likes`,
       {},
       {
         headers: {
-          user: "5cbce31e1b587d18601b9dcd"
+          user: userLogged
         }
       }
     );
+
+    const { likes: totalLikes } = response.data;
+    const { dislikes: totalDislikes } = response.data;
+
+    setLikes(totalLikes.length);
+    setDislikes(totalDislikes.length);
   }
 
   async function handleDislike(id) {
-    await api.post(
+    const userLogged = await AsyncStorage.getItem("user");
+
+    const response = await api.post(
       `/locations/${id}/dislikes`,
       {},
       {
         headers: {
-          user: "5cbce31e1b587d18601b9dcd"
+          user: userLogged
         }
       }
     );
+
+    const { dislikes: totalDislikes } = response.data;
+    const { likes: totalLikes } = response.data;
+
+    setDislikes(totalDislikes.length);
+    setLikes(totalLikes.length);
   }
 
   return (
@@ -76,7 +102,7 @@ function LocationComponent({ data, navigation }) {
             handleLike(data._id);
           }}
         >
-          <LikesCount>{data.likes.length}</LikesCount>
+          <LikesCount>{likes}</LikesCount>
           <Icon size={20} color="white" name="like2" />
         </Likes>
         <Dislikes
@@ -84,7 +110,7 @@ function LocationComponent({ data, navigation }) {
             handleDislike(data._id);
           }}
         >
-          <DislikesCount>{data.dislikes.length}</DislikesCount>
+          <DislikesCount>{dislikes}</DislikesCount>
           <Icon size={20} color="white" name="dislike2" />
         </Dislikes>
       </ReviewContainer>
@@ -93,5 +119,3 @@ function LocationComponent({ data, navigation }) {
     </Container>
   );
 }
-
-export default LocationComponent;
